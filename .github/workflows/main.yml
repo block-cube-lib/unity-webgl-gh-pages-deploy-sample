@@ -13,6 +13,14 @@ jobs:
     steps:
       - name: Check out
         uses: actions/checkout@v2
+          
+      - uses: actions/cache@v2
+        with:
+          path: Library
+          key: Library-unity-webgl-gh-pages-deploy-sample-WebGL
+          restore-keys: |
+            Library-unity-webgl-gh-pages-deploy-sample-
+            Library-
 
       - name: WebGL build
         uses: game-ci/unity-builder@v2
